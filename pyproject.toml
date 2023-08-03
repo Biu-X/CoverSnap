@@ -43,3 +43,9 @@ help = "pre_test hook: Installs the dev packages, then run linting before runnin
 cmd = "pre-commit run --all-files"
 help = "Check code style against linters using pre-commit"
 site_packages = true
+
+[tool.pdm.scripts.pre_lint]
+composite = [
+   "pre-commit install"
+]
+help = "pre_lint hook: Installs pre-commit hooks"
