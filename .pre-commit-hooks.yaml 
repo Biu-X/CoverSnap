@@ -8,7 +8,7 @@
   files: ^pyproject.toml$
 - id: pdm-export
   name: pdm-export-lock
-  description: export locked packages to requirements.txt or setup.py
+  description: export locked packages to requirements.txt
   entry: pdm export
   language: python
   language_version: python3
