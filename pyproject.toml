@@ -34,17 +34,12 @@ help = "Run tests with coverage"
 
 [tool.pdm.scripts.pre_test]
 composite = [
+   "pdm install --dev",
    "pdm run lint"
 ]
-help = "pre_test hook: Runs linting before running tests"
+help = "pre_test hook: Installs the dev packages, then run linting before running tests"
 
 [tool.pdm.scripts.lint]
 cmd = "pre-commit run --all-files"
 help = "Check code style against linters using pre-commit"
 site_packages = true
-
-[tool.pdm.scripts.pre_lint]
-composite = [
-   "pdm install --dev",
-]
-help = "pre_lint hook: Installs the paackages needed to perform linting"
