@@ -3,14 +3,14 @@ name = "CoverSnap"
 version = "0.0.1"
 description = "a convenient Python library for capturing cover images from videos"
 authors = [
-    {name = "Tohrusky", email = "65994850+Tohrusky@users.noreply.github.com"},
+    { name = "Tohrusky", email = "65994850+Tohrusky@users.noreply.github.com" },
 ]
 dependencies = [
     "opencv-python~=4.8.0.74",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [tool.pdm.dev-dependencies]
 pytest = [
@@ -18,7 +18,7 @@ pytest = [
     "pytest-cov~=4.1.0",
 ]
 lint = [
-   "pre-commit~=3.3.3"
+    "pre-commit~=3.3.3"
 ]
 
 [build-system]
@@ -34,8 +34,8 @@ help = "Run tests with coverage"
 
 [tool.pdm.scripts.pre_test]
 composite = [
-   "pdm install --dev",
-   "pdm run lint"
+    "pdm install --dev",
+    "pdm run lint"
 ]
 help = "pre_test hook: Installs the dev packages, then run linting before running tests"
 
@@ -46,6 +46,6 @@ site_packages = true
 
 [tool.pdm.scripts.pre_lint]
 composite = [
-   "pre-commit install"
+    "pre-commit install"
 ]
 help = "pre_lint hook: Installs pre-commit hooks"
