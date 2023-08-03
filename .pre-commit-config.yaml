@@ -16,11 +16,3 @@ repos:
     rev: 6.1.0
     hooks:
       - id: flake8
-  # export python requirements
-  - repo: https://github.com/pdm-project/pdm
-    rev: 2.8.2
-    hooks:
-      - id: pdm-export
-        # command arguments, e.g.:
-        args: [ '-o', 'requirements.txt', '--without-hashes' ]
-        files: ^pdm.lock$
