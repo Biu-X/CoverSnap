@@ -39,8 +39,7 @@ coversnap = "coversnap.__main__:main"
 
 [tool.pdm.scripts.dev]
 composite = [
-    "pdm install --dev",
-    "python AddPath.py"
+    "pdm install --dev"
 ]
 help = "Install the dev packages"
 
