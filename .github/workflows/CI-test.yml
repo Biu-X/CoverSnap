@@ -1,0 +1,52 @@
+name: CI-test
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  CI:
+    strategy:
+      matrix:
+        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+        os-version: [ "windows-latest" , "ubuntu-20.04" , "macos-latest" ]
+
+    runs-on: ${{ matrix.os-version }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: pdm-project/setup-pdm@v3
+        name: Setup PDM
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+          version: 2.8.2
+          prerelease: false
+          enable-pep582: false
+          allow-python-prereleases: false
+          update-python: true
+
+      - name: Install dependencies
+        run: |
+          pdm run dev
+          pdm run lint
+
+      - name: Test
+        run: |
+          pdm run test

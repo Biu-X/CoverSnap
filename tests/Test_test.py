@@ -1,7 +1,5 @@
-
-def test_foo():
-    assert 1 == 1
+from coversnap import hello
 
 
-def test_bar():
-    assert 1 == 2
+def test_hi():
+    assert hello.sayhi() == 114514
