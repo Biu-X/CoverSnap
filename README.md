@@ -1,13 +1,16 @@
 # CoverSnap
+
 A convenient Python library for capturing cover image from video.
 
 [![codecov](https://codecov.io/github/Biu-X/CoverSnap/branch/main/graph/badge.svg?token=FYCR8Y4NDI)](https://codecov.io/github/Biu-X/CoverSnap)
 [![CI-test](https://github.com/Biu-X/CoverSnap/actions/workflows/CI-test.yml/badge.svg)](https://github.com/Biu-X/CoverSnap/actions/workflows/CI-test.yml)
+[![pip-test](https://github.com/Biu-X/CoverSnap/actions/workflows/pip-test.yml/badge.svg)](https://github.com/Biu-X/CoverSnap/actions/workflows/pip-test.yml)
 [![Release](https://github.com/Biu-X/CoverSnap/actions/workflows/Release.yml/badge.svg)](https://github.com/Biu-X/CoverSnap/actions/workflows/Release.yml)
+[![PyPI version](https://badge.fury.io/py/CoverSnap.svg)](https://badge.fury.io/py/CoverSnap)
 ![GitHub](https://img.shields.io/github/license/Biu-X/CoverSnap)
 
-
 ## Installation
+
 You can install CoverSnap using pip (python >= 3.8):
 
 ```bash
@@ -15,6 +18,7 @@ pip install coversnap
 ```
 
 ## CLI
+
 ```
 usage: coversnap [-h] -i INPUT -o OUTPUT
 
@@ -28,9 +32,10 @@ optional arguments:
                         absolute path to output image
 ```
 
-
 ## Python
-To capture a cover image from a video, use the `capture_image` function provided by the CoverSnap library. Here's an example of how to use it:
+
+To capture a cover image from a video, use the `capture_image` function provided by the CoverSnap library. Here's an
+example of how to use it:
 
 ```python
 import os
@@ -49,4 +54,5 @@ cv2.imencode(file_extension, img)[1].tofile(output_image)
 ```
 
 ## License
+
 CoverSnap is licensed under the MIT License.

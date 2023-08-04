@@ -28,6 +28,7 @@ def main() -> None:
         img = np.zeros((512, 512, 3), dtype=np.uint8)
 
     cv2.imencode(file_extension, img)[1].tofile(args.OUTPUT)
+    print(f'Cover saved to {args.OUTPUT}')
 
 
 if __name__ == '__main__':
