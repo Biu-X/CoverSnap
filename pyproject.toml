@@ -1,6 +1,6 @@
 [project]
 name = "CoverSnap"
-version = "0.0.1"
+version = "0.0.2"
 description = "a convenient Python library for capturing cover image from video"
 authors = [
     { name = "Tohrusky", email = "65994850+Tohrusky@users.noreply.github.com" },
@@ -64,3 +64,8 @@ composite = [
     "pre-commit install"
 ]
 help = "pre_lint hook: Installs pre-commit hooks"
+
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
