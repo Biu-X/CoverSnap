@@ -24,7 +24,7 @@ repos:
     rev: v1.4.1
     hooks:
       - id: mypy
-        args: [src]
+        args: [src, tests]
         pass_filenames: false
         additional_dependencies:
           - types-requests

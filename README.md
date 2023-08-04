@@ -53,6 +53,40 @@ _, file_extension = os.path.splitext(output_image)
 cv2.imencode(file_extension, img)[1].tofile(output_image)
 ```
 
+## Development
+
+#### Environment Setup
+
+Before getting started with development, make sure you have the following tools and dependencies installed:
+
+- Python 3.8 or higher
+- [PDM](https://pdm.fming.dev/) (Python Development Master)
+
+#### Installing Development Dependencies
+
+In the project's root directory, run the following command to install the development dependencies:
+
+```bash
+pdm run dev
+```
+
+#### Running Tests
+
+```bash
+pdm run test
+```
+
+This will run the tests and generate test coverage reports. The test results will be displayed in the terminal, and XML
+and HTML format coverage reports will also be generated.
+
+#### Code Style Checking and Static Type Checking
+
+```bash
+pdm run lint
+```
+
+This will run the code style checking and static type checking. The results will be displayed in the terminal.
+
 ## License
 
 CoverSnap is licensed under the MIT License.

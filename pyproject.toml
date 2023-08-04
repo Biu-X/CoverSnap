@@ -1,6 +1,6 @@
 [project]
 name = "CoverSnap"
-version = "0.0.3"
+version = "0.0.4"
 description = "a convenient Python library for capturing cover image from video"
 authors = [
     { name = "Tohrusky", email = "65994850+Tohrusky@users.noreply.github.com" },

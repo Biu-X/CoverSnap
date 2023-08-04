@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
-from typing import List
+from typing import List, Optional
 
 
-def check_image(_image: np.ndarray) -> bool:
+def check_image(_image: Optional[np.ndarray]) -> bool:
     """
     check if the image is valid
     :param _image: bgr image numpy array
@@ -19,7 +19,7 @@ def check_image(_image: np.ndarray) -> bool:
     return True if 10 < mean_value < 245 else False
 
 
-def capture_image(path: str) -> np.ndarray:
+def capture_image(path: str) -> Optional[np.ndarray]:
     """
     capture image from video
     :param path: absolute path of video
