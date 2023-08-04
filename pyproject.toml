@@ -6,15 +6,13 @@ authors = [
     { name = "Tohrusky", email = "65994850+Tohrusky@users.noreply.github.com" },
 ]
 dependencies = [
-    "opencv-python~=4.8.0.74",
+    "opencv-python",
     "Pathlib~=1.0.1",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
 license = { text = "MIT" }
 classifiers = [
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -27,7 +25,7 @@ pytest = [
     "pytest-cov~=4.1.0",
 ]
 lint = [
-    "pre-commit~=3.3.3"
+    "pre-commit"
 ]
 
 [build-system]
@@ -47,16 +45,15 @@ help = "Install the dev packages"
 cmd = "pytest --cov=src --cov-report=html"
 help = "Run tests with coverage"
 
-[tool.pdm.scripts.pre_test]
-composite = [
-    "pdm run lint"
-]
-help = "pre_test hook: Installs the dev packages, then run linting before running tests"
+#[tool.pdm.scripts.pre_test]
+#composite = [
+#    "pdm run lint"
+#]
+#help = "pre_test hook: Installs the dev packages, then run linting before running tests"
 
 [tool.pdm.scripts.lint]
 cmd = "pre-commit run --all-files"
 help = "Check code style against linters using pre-commit"
-site_packages = true
 
 [tool.pdm.scripts.pre_lint]
 composite = [
