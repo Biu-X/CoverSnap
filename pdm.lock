@@ -6,7 +6,7 @@ groups = ["default", "pytest", "lint"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:81a13fe5f42ec69edfb22a751a920eddea378f95da04494053a0a695ed12fdf7"
+content_hash = "sha256:1bd6f2aadb0d5c06e0f9e89aaf8e001b541459919d0d47d2f977d472d38295a5"
 
 [[package]]
 name = "cfgv"
