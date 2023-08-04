@@ -1,0 +1,2 @@
+[run]
+omit = src/coversnap/__main__.py

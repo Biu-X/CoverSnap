@@ -46,7 +46,7 @@ composite = [
 help = "Install the dev packages"
 
 [tool.pdm.scripts.test]
-cmd = "pytest --cov=src --cov-report=html"
+cmd = "pytest --cov=src --cov-config=.coveragerc --cov-report=html"
 help = "Run tests with coverage"
 
 #[tool.pdm.scripts.pre_test]

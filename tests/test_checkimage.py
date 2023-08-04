@@ -1,4 +1,4 @@
-from coversnap.capture import check_image
+from coversnap import check_image
 from tests.util import load_image
 
 

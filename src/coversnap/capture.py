@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from typing import List
 
 
 def check_image(_image: np.ndarray) -> bool:
@@ -27,9 +28,9 @@ def capture_image(path: str) -> np.ndarray:
     try:
         cap = cv2.VideoCapture(path)
         if not cap.isOpened():
+            cap.release()
             raise Exception('Failed to open video capture.')
 
-        cap.release()
     except Exception as e:
         # 处理异常情况
         print('An error occurred:', str(e))
@@ -37,17 +38,13 @@ def capture_image(path: str) -> np.ndarray:
 
     frames_num = int(cap.get(7))
 
-    temp_img: np.ndarray = None
-    check_frames: list[int] = []
+    check_frames: List[int] = []
 
     # 如果视频帧数小于24，直接返回第1帧
     if frames_num < 24:
-        cap.set(cv2.CAP_PROP_POS_FRAMES, 1)
-        _, _image = cap.read()
-        return _image
-
-    # 如果视频帧数小于100，只检测5、10、15帧; 如果视频帧数大于100，跳跃检测，最多10次
-    if frames_num < 100:
+        check_frames = [1]
+    # 如果视频帧数小于100，测试第5、10、15帧
+    elif frames_num < 100:
         check_frames = [5, 10, 15]
     else:
         # 生成20以内的随机int数
@@ -57,12 +54,9 @@ def capture_image(path: str) -> np.ndarray:
     for i in check_frames:
         cap.set(cv2.CAP_PROP_POS_FRAMES, i)
         _, _image = cap.read()
-        if i == check_frames[0]:
-            temp_img = _image
         if check_image(_image):
+            cap.release()
             return _image
-    return temp_img
 
-
-if __name__ == '__main__':
-    check_image(None)
+    cap.release()
+    return None
