@@ -47,7 +47,7 @@ def capture_image(path: str) -> Optional[np.ndarray]:
     elif frames_num < 100:
         check_frames = [5, 10, 15]
     else:
-        # 生成20以内的随机int数
+        # 生成10以内的随机int数
         for _ in range(10):
             check_frames.append(np.random.randint(0, 10))
 
